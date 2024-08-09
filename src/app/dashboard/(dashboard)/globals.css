@@ -1,0 +1,356 @@
+/* src/index.css or src/App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0.25rem; /* Adjust the width as needed */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #dadada; /* Adjust the color as needed */
+  border-radius: 0.125rem; /* Adjust the border-radius as needed */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Adjust the track color as needed */
+}
+@layer base {
+  /* .dark{
+    background-color: #181513;
+  } */
+  /* .light{
+    background-color: #0, 0%, 100%;
+  } */
+  :root {
+    --background: 0, 0%, 100%;
+    --foreground: 214 0% 0%;
+
+    --card: 0, 0%, 100%;
+    --card-foreground: 214 0% 0%;
+
+    --popover: 0, 0%, 100%;
+    --popover-foreground: 214 0% 0%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 214 0% 0%;
+
+    --radius: 0.5rem;
+
+    --tertiary: 222.2 47.4% 11.2%;
+    --tertiary-foreground: 210 40% 98%;
+    .theme-zinc {
+      --tertiary: 240 5.9% 10%;
+      --tertiary-foreground: 0 0% 100%;
+    }
+
+    .theme-white {
+      --tertiary: 0 10% 95%;
+      --tertiary-foreground: 240 30% 3.9%;
+    }
+  }
+  .dark {
+    --tertiary: 210 40% 98%;
+    --tertiary-foreground: 222.2 47.4% 11.2%;
+
+    --background: 214 0% 0%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 0% 26%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 214 0% 0%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    .theme-zinc {
+      --tertiary: 240 5.9% 90%;
+      --tertiary-foreground: 240 5.9% 10%;
+    }
+    .theme-white {
+      --tertiary: 240 10% 5.9%;
+      --tertiary-foreground: 0 0% 100%;
+    }
+    .theme-zinc {
+      --tertiary: 240 5.9% 90%;
+      --tertiary-foreground: 222.2 47.4% 11.2%;
+    }
+  }
+
+  /* White Theme */
+
+  .theme-white {
+    --tertiary: 240 10% 5.9%;
+    --tertiary-foreground: 0 0% 100%;
+  }
+}
+
+@layer components {
+  .react-time-picker {
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 4px;
+  }
+
+  .react-time-picker__inputGroup {
+    display: flex;
+    gap: 4px;
+  }
+
+  .react-time-picker__inputGroup__input {
+    border: 0.5px solid hsl(var(--input));
+    border-radius: 4px;
+    padding: 8px;
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .react-time-picker__button {
+    border: none;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: 4px;
+    padding: 4px;
+  }
+
+  .react-time-picker__clock {
+    background-color: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+  .myCustomTimePicker {
+    display: flex !important;
+    flex-grow: 2 !important;
+    flex-shrink: 0 !important;
+    border: 0.5px solid hsl(var(--input)) !important;
+    width: 15rem !important;
+    border-radius: 6px !important;
+    margin: 8px 0px 0px !important;
+    padding: 4px 12px !important;
+  }
+  .react-time-picker__wrapper:not(.myCustomTimePicker) {
+    border: none !important;
+  }
+  .react-time-picker__inputGroup {
+    border: none !important;
+  }
+
+  .react-time-picker__inputGroup__input {
+    border: none !important;
+
+    padding: 8px !important;
+    width: auto;
+    flex-grow: 1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 20px;
+  }
+  .mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+  }
+  .react-time-picker__wrapper {
+    display: flex !important;
+    flex-grow: 2 !important;
+    flex-shrink: 0 !important;
+    border: 0.5px solid hsl(var(--input)) !important;
+    width: 5rem !important;
+    border-radius: 6px !important;
+    margin: 8px 0px 0px !important;
+    padding: 4px 12px !important;
+  }
+  .react-time-picker__inputGroup {
+    border: none !important;
+  }
+
+  .react-time-picker__inputGroup__input {
+    border: none !important;
+
+    padding: 8px !important;
+    width: auto;
+    flex-grow: 1;
+  }
+}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+.mybg {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 41%,
+    rgba(48, 25, 52, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 41%,
+    rgba(48, 25, 52, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 41%,
+    rgba(48, 25, 52, 1) 100%
+  );
+  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#301934",GradientType=1); */
+}
+.rdp-vhidden {
+  @apply hidden;
+}
+
+/* Zinc Theme */
+
+/* Gray Theme */
+.theme-gray {
+  --tertiary: 240 5.9% 50%;
+  --tertiary-foreground: 0 0% 100%;
+}
+
+.dark .theme-gray {
+  --tertiary: 240 5.9% 50%;
+  --tertiary-foreground: 0 0% 100%;
+}
+
+/* Blue Theme */
+.theme-blue {
+  --tertiary: 221.2 83.2% 55.3%;
+  --tertiary-foreground: 210 40% 98%;
+}
+
+.dark .theme-blue {
+  --tertiary: 217.2 91.2% 60.8%;
+  --tertiary-foreground: 222.2 47.4% 11.2%;
+}
+/* Aqua Theme */
+.theme-aqua {
+  --tertiary: 180 100% 40%; /* Aqua color */
+  --tertiary-foreground: 210 40% 98%;
+}
+
+.dark .theme-aqua {
+  --tertiary: 180 100% 30%; /* Darker aqua color */
+  --tertiary-foreground: 222.2 47.4% 11.2%;
+}
+
+/* Yellow Theme */
+.theme-yellow {
+  --tertiary: 47.9 95.8% 53.1%; /* Adjusted to be darker */
+  --tertiary-foreground: 210 40% 98%;
+}
+
+.dark .theme-yellow {
+  --tertiary: 47.9 95.8% 53.1%; /* Adjusted to be darker */
+  --tertiary-foreground: 222.2 47.4% 11.2%;
+}
+
+/* Green Theme */
+.theme-green {
+  --tertiary: 142.1 76.2% 45.3%;
+  --tertiary-foreground: 355.7 100% 97.3%;
+}
+
+.dark .theme-green {
+  --tertiary: 142.1 70.6% 55.3%;
+  --tertiary-foreground: 144.9 80.4% 10%;
+}
+/* Red Theme */
+.theme-red {
+  --tertiary: 0 84.2% 55.2%;
+  --tertiary-foreground: 210 40% 98%;
+}
+
+.dark .theme-red {
+  --tertiary: 0 72.2% 45.6%;
+  --tertiary-foreground: 0 85.7% 97.3%;
+}
+
+/* Purple Theme */
+.theme-purple {
+  --tertiary: 270 70% 65%;
+  --tertiary-foreground: 0 0% 100%;
+}
+
+.dark .theme-purple {
+  --tertiary: 270 80% 65%;
+  --tertiary-foreground: 0 0% 100%;
+}
+
+/*.theme-orange {
+  --tertiary: 24.6 95% 53.1%;
+  --tertiary-foreground: 60 9.1% 97.8%;
+}
+
+.dark .theme-orange {
+  --tertiary: 24.6 95% 53.1%;
+  --tertiary-foreground: 60 9.1% 97.8%;
+}
+
+.theme-pink {
+  --tertiary: 336.8 84% 56.9%;
+  --tertiary-foreground: 0 0% 100%;
+}
+
+.dark .theme-pink {
+  --tertiary: 338.5 86% 63.7%;
+  --tertiary-foreground: 0 0% 100%;
+}
+*/

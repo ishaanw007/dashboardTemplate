@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{amssymb}  % For checkboxes
+\usepackage{enumitem} % For customized bullet points
+
+\begin{document}
+
+\section{Sidebar Entries}
+
+\begin{itemize}
+    \item \textbf{Dashboard Home} - Overview of the system, quick stats, and notifications.
+    \item \textbf{Employee Management} - Listing, adding, editing, and removing employees.
+    \item \textbf{Role and Permissions} - Managing roles, permissions, and role inheritance.
+    \item \textbf{Shift Management} - Creating, assigning, and deleting shifts.
+    \item \textbf{Authentication} - Handling login, registration, logout, password reset requests.
+    \item \textbf{Settings} - Configuration of system-wide settings, user preferences.
+\end{itemize}
+
+\section{Components for Each Page}
+
+\subsection{Dashboard Home}
+
+\begin{itemize}
+    \item \textbf{Card} for quick stats like total employees, active shifts.
+    \item \textbf{Calendar} to view upcoming shifts.
+    \item \textbf{Alert} for notifications about system updates or issues.
+\end{itemize}
+
+\subsection{Employee Management}
+
+\begin{itemize}
+    \item \textbf{Data Table} for listing employees with PaginationNew.
+    \item \textbf{Dialog or DrawerNew} for adding/editing employee details.
+    \item \textbf{Button} for actions like add, edit, and delete.
+    \item \textbf{Form components} like Input, Select, and Checkbox for employee details.
+\end{itemize}
+
+\subsection{Role and Permissions}
+
+\begin{itemize}
+    \item \textbf{Accordion or Tabs} to separate roles and permissions for better organization.
+    \item \textbf{Data Table} to list out roles and associated permissions.
+    \item \textbf{Checkbox} (\checkmark) within the table for enabling/disabling specific permissions for a role.
+    \item \textbf{Button} to save changes or add new roles.
+\end{itemize}
+
+\subsection{Shift Management}
+
+\begin{itemize}
+\item \textbf{Calendar} for viewing and assigning shifts.
+\item \textbf{Dialog} for creating new shifts or editing existing ones.
+\item \textbf{Data Table} to list shifts with PaginationNew.
+\item \textbf{Form components}
+\begin{itemize}
+\item Select for shift type, start/end time, etc.
+\item Input for shift name/description.
+\end{itemize}
+\end{itemize}
+
+\subsection{Authentication}
+
+\begin{itemize}
+\item \textbf{Form components}
+\begin{itemize}
+\item \textbf{Login Form:}
+\begin{itemize}
+\item Input for email
+\item Input for password (with masked input)
+\item Button for submit action
+\end{itemize}
+\item \textbf{Registration Form:} (similar structure, additional fields as needed)
+\item \textbf{Password Reset Form:}
+\begin{itemize}
+\item Input for email
+\item Button for submit action
+\end{itemize}
+\end{itemize}
+\item \textbf{Toast or Alert} for showing success or error messages.
+\end{itemize}
+
+\subsection{Settings}
+
+\begin{itemize}
+\item \textbf{Tabs} for categorizing different settings (e.g., General, Notifications, Profile, etc.)
+\item \textbf{Form components} within each tab:
+\begin{itemize}
+\item Input for text-based settings
+\item Select for dropdown options
+\item Switch for toggling on/off settings
+\end{itemize}
+\item \textbf{Button} to save changes (globally or per tab).
+\end{itemize}
+
+\section{Additional Suggestions}
+
+\begin{itemize}
+    \item \textbf{Navigation Menu} can be used for the sidebar to organize the entries neatly.
+    \item \textbf{Skeleton components} for loading states when fetching data.
+    \item \textbf{Tooltips} for additional information on hover for certain elements, improving UX. 
+    \item \textbf{Toast or Alert Dialog} for critical notifications that require user action.
+
+\end{itemize}
+
+\end{document}
+

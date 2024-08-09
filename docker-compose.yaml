@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_DB_HOST: "https://api.devzilla.co.in"  # Replace with your actual backend URL
+    
+    command: ["npm", "run", "start"]
